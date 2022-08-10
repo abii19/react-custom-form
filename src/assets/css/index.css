@@ -1,0 +1,45 @@
+/* tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Customizing forms */
+@layer base {
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply focus:ring-indigo-600;
+  }
+  [type="checkbox"] {
+    @apply focus:ring-indigo-600;
+  }
+  [type="radio"] {
+    @apply focus:ring-indigo-600;
+  }
+  label {
+    @apply block font-semibold text-sm leading-6 mb-1.5;
+  }
+  .error {
+    @apply text-sm p-0.5 text-red-500 hidden;
+  }
+  input:invalid[focused="true"],
+  select:invalid[focused="true"] {
+    @apply border border-red-500;
+  }
+  input:invalid[focused="true"] ~ .error,
+  select:invalid[focused="true"] ~ .error {
+    @apply block;
+  }
+}
